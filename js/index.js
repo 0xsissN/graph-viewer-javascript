@@ -77,44 +77,6 @@ const printAdj = (adj) => {
     });
 }
 
-const dijkstra = (n, adj, src) => {
-    // Array to store minimum distances
-    let dis = new Array(n + 1).fill(Number.MAX_SAFE_INTEGER);
-
-    // Array to mark visited vertices
-    let vis = new Array(n + 1).fill(false);
-
-    // Set the distance to the source as 0
-    dis[src] = 0;
-
-    for (let i = 0; i < n; i++) {
-        let v = -1;
-        for (let j = 1; j <= n; j++) {
-            if (!vis[j] && (v == -1 || dis[j] < dis[v]))
-                v = j;
-        }
-
-        if (dis[v] == Number.MAX_SAFE_INTEGER)
-            break;
-        // Mark vertex v as visited
-        vis[v] = true;
-
-        for (let edge of adj[v]) {
-            // Neighbor vertex
-            let x = edge.vertex;
-            // Edge weight
-            let wt = edge.weight;
-
-            // Update the distance if a shorter path is found
-            if (dis[v] + wt < dis[x]) {
-                dis[x] = dis[v] + wt;
-            }
-        }
-    }
-    // Return the array of minimum distances
-    return dis.slice(1); // Remove the first element (index 0)
-}
-
 window.onload = init;
 
 
