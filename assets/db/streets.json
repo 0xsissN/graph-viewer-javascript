@@ -1,0 +1,38 @@
+[
+    {
+        "startVertex": "0",
+        "endVertex": "2",
+        "distance": "6",
+        "color": "black"
+    },
+    {
+        "startVertex": "0",
+        "endVertex": "3",
+        "distance": "5",
+        "color": "black"
+    },
+    {
+        "startVertex": "1",
+        "endVertex": "2",
+        "distance": "7",
+        "color": "black"
+    },
+    {
+        "startVertex": "2",
+        "endVertex": "3",
+        "distance": "13",
+        "color": "black"
+    },
+    {
+        "startVertex": "2",
+        "endVertex": "4",
+        "distance": "6",
+        "color": "black"
+    },
+    {
+        "startVertex": "3",
+        "endVertex": "4",
+        "distance": "5",
+        "color": "black"
+    }
+]

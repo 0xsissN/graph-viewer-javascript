@@ -1,0 +1,42 @@
+[
+    {
+        "ejeX": "0.05",
+        "ejeY": "0.1",
+        "vertex": "0",
+        "color": "white",
+        "stroke": "black",
+        "city": "Tarija"
+    },
+    {
+        "ejeX": "0.05",
+        "ejeY": "0.4",
+        "vertex": "1",
+        "color": "white",
+        "stroke": "black",
+        "city": "Santa Cruz"
+    },
+    {
+        "ejeX": "0.2",
+        "ejeY": "0.2",
+        "vertex": "2",
+        "color": "white",
+        "stroke": "black",
+        "city": "Cochabamba"
+    },
+    {
+        "ejeX": "0.4",
+        "ejeY": "0.05",
+        "vertex": "3",
+        "color": "white",
+        "stroke": "black",
+        "city": "La Paz"
+    },
+    {
+        "ejeX": "0.4",
+        "ejeY": "0.4",
+        "vertex": "4",
+        "color": "white",
+        "stroke": "black",
+        "city": "Sucre"
+    }
+]
