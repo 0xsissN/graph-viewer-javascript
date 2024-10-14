@@ -1,9 +1,10 @@
 const canvas = document.getElementById('map')
 const ctx = canvas.getContext('2d')
-let adj = []
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
+let adj = {}
+let start = "", end = ""
 
 async function loadJSON(url){
     const response = await fetch(url)
@@ -33,9 +34,8 @@ async function init() {
         ctx.font = '13px Arial';
         ctx.fillText(`${street.distance}`, mx, my);
 
-        adj[street.startVertex].push({vertex: parseInt(street.endVertex), distance: parseInt(street.distance)})
-        adj[street.endVertex].push({vertex: parseInt(street.startVertex), distance: parseInt(street.distance)})
-        
+        adj[parseInt(street.startVertex)][parseInt(street.endVertex)] = parseInt(street.distance)
+        adj[parseInt(street.endVertex)][parseInt(street.startVertex)] = parseInt(street.distance)
     });
 
     corners.forEach(corner => {
@@ -46,11 +46,9 @@ async function init() {
         ctx.strokeStyle = corner.stroke
         ctx.stroke()
     })
-
-    printAdj(adj)
 }
 
-async function selectVertex() {
+async function selectVertex(option) {
     const corners = await loadJSON('../assets/db/corners.json')
 
     canvas.addEventListener('click', (e) => {
@@ -64,19 +62,23 @@ async function selectVertex() {
             let dist = Math.sqrt(Math.pow(cornerX - clickX, 2) + Math.pow(cornerY - clickY, 2))
             
             if(dist < 10){
-                console.log(corner.city)
+                if(option == 1){
+                    start = corner.vertex
+                }else if(option == 2){
+                    end = corner.vertex
+                }
+                console.log(start, end)
+                return
             }
         })
     })
 }
 
-const printAdj = (adj) => {
-    adj.forEach((connections, vertex) => {
-        const connectionStrings = connections.map(connection => `(${connection.vertex}, ${connection.distance})`);
-        console.log(`Vertex ${vertex}: ${connectionStrings.join(', ')}`);
-    });
+const startAlg = () =>{
+    dijkstra(adj, '0', '1')
 }
 
-window.onload = init;
+window.onload = init
+
 
 
