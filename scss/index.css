@@ -1,11 +1,32 @@
 body{
-    background-color: aquamarine;
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+main{
+    display: flex;
+    height: 100vh;
+}
+
+aside {
+    width: 1000px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
 #map{
     width: 100vw;
     height: 100vh;
 }
+
+/*
+canvas{
+    background-image: url(../assets/img/map.jpg);
+}
+*/

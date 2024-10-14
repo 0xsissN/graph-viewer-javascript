@@ -4,14 +4,15 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let adj = {}
-let start = "", end = ""
+let start = ""
+let end = ""
 
-async function loadJSON(url){
+const loadJSON = async (url) => {
     const response = await fetch(url)
     return await response.json()
 }
 
-async function init() {
+const init = async () => {
     const corners = await loadJSON('../assets/db/corners.json')
     const streets = await loadJSON('../assets/db/streets.json')
 
@@ -48,10 +49,10 @@ async function init() {
     })
 }
 
-async function selectVertex(option) {
+const selectVertex = async (option) => {
     const corners = await loadJSON('../assets/db/corners.json')
 
-    canvas.addEventListener('click', (e) => {
+    const handleClick = (e) => {    
         const canvasRect = canvas.getBoundingClientRect()
         let clickX = e.clientX - canvasRect.left
         let clickY = e.clientY - canvasRect.top
@@ -62,20 +63,23 @@ async function selectVertex(option) {
             let dist = Math.sqrt(Math.pow(cornerX - clickX, 2) + Math.pow(cornerY - clickY, 2))
             
             if(dist < 10){
-                if(option == 1){
+                if(option === 1){
                     start = corner.vertex
-                }else if(option == 2){
+                }else if(option === 2){
                     end = corner.vertex
                 }
-                console.log(start, end)
-                return
+
+                canvas.removeEventListener('click', handleClick)
             }
         })
-    })
+    }
+
+    canvas.addEventListener('click', handleClick)
 }
 
 const startAlg = () =>{
-    dijkstra(adj, '0', '1')
+    console.log(start, end)
+    dijkstra(adj, start, end)
 }
 
 window.onload = init
