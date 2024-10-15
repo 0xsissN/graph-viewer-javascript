@@ -1,42 +1,56 @@
 [
     {
-        "ejeX": "0.05",
-        "ejeY": "0.1",
+        "ejeX": "0.48",
+        "ejeY": "0.89",
         "vertex": "0",
-        "color": "white",
-        "stroke": "black",
         "city": "Tarija"
     },
     {
-        "ejeX": "0.05",
-        "ejeY": "0.4",
+        "ejeX": "0.6",
+        "ejeY": "0.55",
         "vertex": "1",
-        "color": "white",
-        "stroke": "black",
         "city": "Santa Cruz"
     },
     {
-        "ejeX": "0.2",
-        "ejeY": "0.2",
+        "ejeX": "0.42",
+        "ejeY": "0.57",
         "vertex": "2",
-        "color": "white",
-        "stroke": "black",
         "city": "Cochabamba"
     },
     {
-        "ejeX": "0.4",
-        "ejeY": "0.05",
+        "ejeX": "0.31",
+        "ejeY": "0.45",
         "vertex": "3",
-        "color": "white",
-        "stroke": "black",
         "city": "La Paz"
     },
     {
-        "ejeX": "0.4",
-        "ejeY": "0.4",
+        "ejeX": "0.44",
+        "ejeY": "0.7",
         "vertex": "4",
-        "color": "white",
-        "stroke": "black",
         "city": "Sucre"
+    },
+    {
+        "ejeX": "0.37",
+        "ejeY": "0.833",
+        "vertex": "5",
+        "city": "Potosi"
+    },
+    {
+        "ejeX": "0.33",
+        "ejeY": "0.67",
+        "vertex": "6",
+        "city": "Oruro"
+    },
+    {
+        "ejeX": "0.45",
+        "ejeY": "0.3",
+        "vertex": "7",
+        "city": "Beni"
+    },
+    {
+        "ejeX": "0.34",
+        "ejeY": "0.14",
+        "vertex": "8",
+        "city": "Pando"
     }
 ]

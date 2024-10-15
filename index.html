@@ -9,9 +9,17 @@
 <body>
     <main>
         <aside>
-            <h4>Camino más corto</h4>
-            <button onclick="selectVertex(1)">Comienza</button>
-            <button onclick="selectVertex(2)">Termina</button>
+            <h1>Camino más corto (Dijkstra)</h1>
+            <label for="source-vertex">Comienzo:</label>
+            <select id="source-vertex">
+                <option value="">Selecciona una ciudad</option>
+            </select>
+
+            <label for="destination-vertex">Fin:</label>
+            <select id="destination-vertex">
+                <option value="">Selecciona una ciudad</option>
+            </select>
+    
             <button onclick="startAlg()">Correr algoritmo</button>
         </aside>
         <canvas id="map"></canvas>    

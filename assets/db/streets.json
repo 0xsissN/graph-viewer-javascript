@@ -1,38 +1,57 @@
 [
     {
         "startVertex": "0",
-        "endVertex": "2",
-        "distance": "6",
-        "color": "black"
-    },
-    {
-        "startVertex": "0",
-        "endVertex": "3",
-        "distance": "5",
-        "color": "black"
+        "endVertex": "1",
+        "distance": "30"
     },
     {
         "startVertex": "1",
-        "endVertex": "2",
-        "distance": "7",
-        "color": "black"
+        "endVertex": "7",
+        "distance": "20"
     },
     {
-        "startVertex": "2",
+        "startVertex": "7",
+        "endVertex": "8",
+        "distance": "7"
+    },
+    {
+        "startVertex": "8",
         "endVertex": "3",
-        "distance": "13",
-        "color": "black"
+        "distance": "15"
+    },
+    {
+        "startVertex": "3",
+        "endVertex": "6",
+        "distance": "5"
+    },
+    {
+        "startVertex": "5",
+        "endVertex": "2",
+        "distance": "10"
     },
     {
         "startVertex": "2",
-        "endVertex": "4",
-        "distance": "6",
-        "color": "black"
+        "endVertex": "8",
+        "distance": "25"
     },
     {
         "startVertex": "3",
         "endVertex": "4",
-        "distance": "5",
-        "color": "black"
+        "distance": "18"
+    },
+    {
+        "startVertex": "1",
+        "endVertex": "6",
+        "distance": "15"
+    },
+    {
+        "startVertex": "6",
+        "endVertex": "5",
+        "distance": "8"
+    },
+    {
+        "startVertex": "0",
+        "endVertex": "4",
+        "distance": "13"
     }
 ]

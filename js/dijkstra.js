@@ -20,14 +20,18 @@ const dijkstra = (adj, source, destination) => {
         '1': { cost: inf, pred: [] },
         '2': { cost: inf, pred: [] },
         '3': { cost: inf, pred: [] },
-        '4': { cost: inf, pred: [] }
+        '4': { cost: inf, pred: [] },
+        '5': { cost: inf, pred: [] },
+        '6': { cost: inf, pred: [] },
+        '7': { cost: inf, pred: [] },
+        '8': { cost: inf, pred: [] }
     };
     
     nodeData[source].cost = 0;
     const visited = [];
     let temp = source;
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 7; i++) {
         if (!visited.includes(temp)) {
             visited.push(temp);
             const minHeap = new MinPriorityQueue();

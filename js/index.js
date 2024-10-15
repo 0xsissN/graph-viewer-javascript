@@ -25,14 +25,14 @@ const init = async () => {
         ctx.beginPath();
         ctx.moveTo(start.ejeX * canvas.width, start.ejeY * canvas.height);
         ctx.lineTo(end.ejeX * canvas.width, end.ejeY * canvas.height);
-        ctx.strokeStyle = street.color; 
+        ctx.strokeStyle = 'white'; 
         ctx.stroke();
 
         let mx = ((start.ejeX * canvas.width) + (end.ejeX * canvas.width)) / 2;
         let my = ((start.ejeY * canvas.height) + (end.ejeY * canvas.height)) / 2;
 
-        ctx.fillStyle = street.color;
-        ctx.font = '13px Arial';
+        ctx.fillStyle = 'white';
+        ctx.font = '30px Arial';
         ctx.fillText(`${street.distance}`, mx, my);
 
         adj[parseInt(street.startVertex)][parseInt(street.endVertex)] = parseInt(street.distance)
@@ -42,47 +42,40 @@ const init = async () => {
     corners.forEach(corner => {
         ctx.beginPath()
         ctx.arc(corner.ejeX * canvas.width, corner.ejeY * canvas.height, 10, 0, Math.PI * 2)
-        ctx.fillStyle = corner.color
+        ctx.fillStyle = 'white'
         ctx.fill()
-        ctx.strokeStyle = corner.stroke
-        ctx.stroke()
     })
 }
 
-const selectVertex = async (option) => {
+const loadCities = async () => {
     const corners = await loadJSON('../assets/db/corners.json')
-
-    const handleClick = (e) => {    
-        const canvasRect = canvas.getBoundingClientRect()
-        let clickX = e.clientX - canvasRect.left
-        let clickY = e.clientY - canvasRect.top
-
-        corners.forEach(corner => {
-            let cornerX = corner.ejeX * canvas.width
-            let cornerY = corner.ejeY * canvas.height
-            let dist = Math.sqrt(Math.pow(cornerX - clickX, 2) + Math.pow(cornerY - clickY, 2))
-            
-            if(dist < 10){
-                if(option === 1){
-                    start = corner.vertex
-                }else if(option === 2){
-                    end = corner.vertex
-                }
-
-                canvas.removeEventListener('click', handleClick)
-            }
-        })
-    }
-
-    canvas.addEventListener('click', handleClick)
+    const sourceVertex = document.getElementById('source-vertex')
+    const destinationVertex = document.getElementById('destination-vertex')
+        
+    corners.forEach(corner => {
+        let optionSource = new Option(corner.city, corner.vertex)
+        let destinationSource = new Option(corner.city, corner.vertex)
+        
+        sourceVertex.add(optionSource)
+        destinationVertex.add(destinationSource)
+    })
 }
+
+document.getElementById('source-vertex').addEventListener('change', function() {
+    start = this.value
+})
+
+document.getElementById('destination-vertex').addEventListener('change', function() {
+    end = this.value
+})
 
 const startAlg = () =>{
     console.log(start, end)
     dijkstra(adj, start, end)
 }
 
-window.onload = init
+init()
+loadCities()
 
 
 
