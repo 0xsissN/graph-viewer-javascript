@@ -4,15 +4,18 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let adj = {}
-let start = ""
-let end = ""
+let source = ""
+let destination = ""
+let selectedSource = null
+let selectedDestination = null
+let path = []
 
 const loadJSON = async (url) => {
     const response = await fetch(url)
     return await response.json()
 }
 
-const init = async () => {
+const drawMap = async () => {
     const corners = await loadJSON('../assets/db/corners.json')
     const streets = await loadJSON('../assets/db/streets.json')
 
@@ -25,7 +28,13 @@ const init = async () => {
         ctx.beginPath();
         ctx.moveTo(start.ejeX * canvas.width, start.ejeY * canvas.height);
         ctx.lineTo(end.ejeX * canvas.width, end.ejeY * canvas.height);
-        ctx.strokeStyle = 'white'; 
+
+        if(isShortPath(street.startVertex, street.endVertex)){
+            ctx.strokeStyle = 'blue'; 
+        }else{
+            ctx.strokeStyle = 'white'; 
+        }
+
         ctx.stroke();
 
         let mx = ((start.ejeX * canvas.width) + (end.ejeX * canvas.width)) / 2;
@@ -42,7 +51,15 @@ const init = async () => {
     corners.forEach(corner => {
         ctx.beginPath()
         ctx.arc(corner.ejeX * canvas.width, corner.ejeY * canvas.height, 10, 0, Math.PI * 2)
-        ctx.fillStyle = 'white'
+
+        if(parseInt(corner.vertex) == selectedSource){
+            ctx.fillStyle = 'green'
+        }else if(parseInt(corner.vertex) == selectedDestination){
+            ctx.fillStyle = 'red'
+        }else{
+            ctx.fillStyle = 'white'
+        }
+        
         ctx.fill()
     })
 }
@@ -62,19 +79,39 @@ const loadCities = async () => {
 }
 
 document.getElementById('source-vertex').addEventListener('change', function() {
-    start = this.value
+    source = this.value
+    selectedSource = parseInt(this.value)
+    drawMap()
 })
 
 document.getElementById('destination-vertex').addEventListener('change', function() {
-    end = this.value
+    destination = this.value
+    selectedDestination = parseInt(this.value)
+    drawMap()
 })
 
 const startAlg = () =>{
-    console.log(start, end)
-    dijkstra(adj, start, end)
+    console.log(source, destination)
+    dijkstra(adj, source, destination)
 }
 
-init()
+const pathAlg = (pahtA) => {
+    path = pahtA
+    console.log(path)
+    drawMap()
+}
+
+const isShortPath = (startVertex, endVertex) => {
+    for(let i = 0; i < path.length - 1; i++){
+        if((startVertex == path[i] && endVertex == path[i + 1]) || (endVertex == path[i] && startVertex == path[i + 1])){
+            return true
+        }
+    }
+
+    return false
+}
+
+drawMap()
 loadCities()
 
 

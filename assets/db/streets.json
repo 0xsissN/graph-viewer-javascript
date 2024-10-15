@@ -2,56 +2,67 @@
     {
         "startVertex": "0",
         "endVertex": "1",
-        "distance": "30"
+        "distance": "30",
+        "stroke": "white"
     },
     {
         "startVertex": "1",
         "endVertex": "7",
-        "distance": "20"
+        "distance": "20",
+        "stroke": "white"
     },
     {
         "startVertex": "7",
         "endVertex": "8",
-        "distance": "7"
+        "distance": "7",
+        "stroke": "white"
     },
     {
         "startVertex": "8",
         "endVertex": "3",
-        "distance": "15"
+        "distance": "15",
+        "stroke": "white"
     },
     {
         "startVertex": "3",
         "endVertex": "6",
-        "distance": "5"
+        "distance": "5",
+        "stroke": "white"
     },
     {
         "startVertex": "5",
         "endVertex": "2",
-        "distance": "10"
+        "distance": "10",
+        "stroke": "white"
     },
     {
         "startVertex": "2",
         "endVertex": "8",
-        "distance": "25"
+        "distance": "25",
+        "stroke": "white"
     },
     {
         "startVertex": "3",
         "endVertex": "4",
-        "distance": "18"
+        "distance": "18",
+        "stroke": "white"
     },
     {
         "startVertex": "1",
         "endVertex": "6",
-        "distance": "15"
+        "distance": "15",
+        "stroke": "white"
     },
     {
         "startVertex": "6",
         "endVertex": "5",
-        "distance": "8"
+        "distance": "8",
+        "stroke": "white"
     },
     {
         "startVertex": "0",
         "endVertex": "4",
-        "distance": "13"
+        "distance": "13",
+        "stroke": "white"
     }
 ]

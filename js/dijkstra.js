@@ -51,6 +51,7 @@ const dijkstra = (adj, source, destination) => {
         }
     }
 
-    console.log("Shortest distance: " + nodeData[destination].cost);
-    console.log("Shortest path: " + [...nodeData[destination].pred, destination].join(' -> '));
+    let path = [...nodeData[destination].pred, destination]
+    pathAlg(path)
 }
+
