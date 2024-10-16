@@ -1,6 +1,7 @@
 const canvas = document.getElementById('map')
 const ctx = canvas.getContext('2d')
-canvas.width = window.innerWidth;
+const aside = document.querySelector('aside');
+canvas.width = window.innerWidth - aside.offsetWidth;
 canvas.height = window.innerHeight;
 
 let adj = {}
