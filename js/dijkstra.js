@@ -18,11 +18,6 @@ const dijkstra = (adj, source, destination) => {
     let temp = source;
     let minHeap = [];
 
-    const heappush = (heap, element) => {
-        heap.push(element);
-        heap.sort((a, b) => a[0] - b[0]);  
-    };
-
     for (let i = 0; i < 7; i++) {
         if (!visited.includes(temp)) {
             visited.push(temp); 
@@ -48,3 +43,8 @@ const dijkstra = (adj, source, destination) => {
     let path = [...nodeData[destination].pred, destination]
     pathAlg(path)
 }
+
+const heappush = (heap, element) => {
+    heap.push(element);
+    heap.sort((a, b) => a[0] - b[0]);  
+};

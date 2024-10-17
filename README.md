@@ -3,3 +3,4 @@
 Task
 acomodar los puntos
 bugs
+Usar a JQuery
