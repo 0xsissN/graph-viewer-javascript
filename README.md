@@ -1,6 +1,10 @@
 # graph-viewer-javascript
 
+
 Task
-acomodar los puntos
-bugs
-Usar a JQuery
+- Animar, sidebar
+- Uso de JQuery ./
+- Bugs
+- Ajustar puntos
+- Configurar mapa
+- Permitido usar framework CSS

@@ -1,9 +1,9 @@
-const canvas = document.getElementById('map')
+const canvas = $('#map').get(0)
 const ctx = canvas.getContext('2d')
-canvas.width = window.innerWidth ;
+canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let adj = {}
+let adj = []
 let source = ""
 let destination = ""
 let selectedSource = null
@@ -66,38 +66,38 @@ const drawMap = async () => {
 
 const loadCities = async () => {
     const corners = await loadJSON('../assets/db/corners.json')
-    const sourceVertex = document.getElementById('source-vertex')
-    const destinationVertex = document.getElementById('destination-vertex')
-        
+    const sourceVertex = $('#source-vertex')
+    const destinationVertex = $('#destination-vertex')
+
     corners.forEach(corner => {
-        let optionSource = new Option(corner.city, corner.vertex)
-        let destinationSource = new Option(corner.city, corner.vertex)
+        let optionSource = $('<option>').val(corner.vertex).text(corner.city)
+        let destinationSource = $('<option>').val(corner.vertex).text(corner.city)
         
-        sourceVertex.add(optionSource)
-        destinationVertex.add(destinationSource)
+        sourceVertex.append(optionSource)
+        destinationVertex.append(destinationSource)
     })
 }
 
-document.getElementById('source-vertex').addEventListener('change', function() {
-    source = this.value
-    selectedSource = parseInt(this.value)
+$('#source-vertex').on('change', (e) => {
+    let eTar = $(e.target).val()
+    source = eTar
+    selectedSource = parseInt(eTar)
     drawMap()
 })
 
-document.getElementById('destination-vertex').addEventListener('change', function() {
-    destination = this.value
-    selectedDestination = parseInt(this.value)
+$('#destination-vertex').on('change', (e) => {
+    let eTar = $(e.target).val()
+    destination = eTar
+    selectedDestination = parseInt(eTar)
     drawMap()
 })
 
-const startAlg = () =>{
-    console.log(source, destination)
+$('#correr-alg').on('click', () => {
     dijkstra(adj, source, destination)
-}
+})
 
 const pathAlg = (pahtA) => {
     path = pahtA
-    console.log(path)
     drawMap()
 }
 

@@ -24,19 +24,18 @@ const dijkstra = (adj, source, destination) => {
             
             for (let neighbor in adj[temp]) {
                 if (!visited.includes(neighbor)) {
-                    const cost = nodeData[temp].cost + adj[temp][neighbor];
+                    let cost = nodeData[temp].cost + adj[temp][neighbor];
                     if (cost < nodeData[neighbor].cost) {
                         nodeData[neighbor].cost = cost;
                         nodeData[neighbor].pred = [...nodeData[temp].pred, temp];  
                     }
-                    heappush(minHeap, [nodeData[neighbor].cost, neighbor]);  
+                    minHeap.push(neighbor)
                 }
             }
 
-            if (minHeap.length > 0) {
-                temp = minHeap[0][1];  
-                minHeap.shift();  
-            }
+            minHeap.sort()
+            temp = minHeap[0]
+            minHeap.shift()
         }
     }
 
@@ -44,7 +43,3 @@ const dijkstra = (adj, source, destination) => {
     pathAlg(path)
 }
 
-const heappush = (heap, element) => {
-    heap.push(element);
-    heap.sort((a, b) => a[0] - b[0]);  
-};
