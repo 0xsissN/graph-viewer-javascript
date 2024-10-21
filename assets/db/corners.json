@@ -1,54 +1,54 @@
 [
     {
-        "ejeX": "0.48",
-        "ejeY": "0.89",
+        "ejeX": "0.103",
+        "ejeY": "0.9",
         "vertex": "0",
         "city": "Tarija"
     },
     {
-        "ejeX": "0.6",
-        "ejeY": "0.55",
+        "ejeX": "0.14",
+        "ejeY": "0.5",
         "vertex": "1",
         "city": "Santa Cruz"
     },
     {
-        "ejeX": "0.42",
+        "ejeX": "0.08",
         "ejeY": "0.57",
         "vertex": "2",
         "city": "Cochabamba"
     },
     {
-        "ejeX": "0.31",
+        "ejeX": "0.03",
         "ejeY": "0.45",
         "vertex": "3",
         "city": "La Paz"
     },
     {
-        "ejeX": "0.44",
+        "ejeX": "0.096",
         "ejeY": "0.7",
         "vertex": "4",
         "city": "Sucre"
     },
     {
-        "ejeX": "0.37",
+        "ejeX": "0.05",
         "ejeY": "0.833",
         "vertex": "5",
         "city": "Potosi"
     },
     {
-        "ejeX": "0.33",
+        "ejeX": "0.033",
         "ejeY": "0.67",
         "vertex": "6",
         "city": "Oruro"
     },
     {
-        "ejeX": "0.45",
+        "ejeX": "0.08",
         "ejeY": "0.3",
         "vertex": "7",
         "city": "Beni"
     },
     {
-        "ejeX": "0.34",
+        "ejeX": "0.03",
         "ejeY": "0.14",
         "vertex": "8",
         "city": "Pando"

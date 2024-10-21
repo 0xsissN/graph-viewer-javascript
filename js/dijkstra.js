@@ -42,4 +42,3 @@ const dijkstra = (adj, source, destination) => {
     let path = [...nodeData[destination].pred, destination]
     pathAlg(path)
 }
-

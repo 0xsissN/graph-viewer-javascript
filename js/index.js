@@ -1,7 +1,9 @@
 const canvas = $('#map').get(0)
 const ctx = canvas.getContext('2d')
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+
+$('.toggle-btn').on('click', () => {
+    $('#sidebar').toggleClass('expand')
+})
 
 let adj = []
 let source = ""
@@ -26,8 +28,8 @@ const drawMap = async () => {
         let end = corners[street.endVertex];
 
         ctx.beginPath();
-        ctx.moveTo(start.ejeX * canvas.width, start.ejeY * canvas.height);
-        ctx.lineTo(end.ejeX * canvas.width, end.ejeY * canvas.height);
+        ctx.moveTo(start.ejeX * canvas.width * 4, start.ejeY * canvas.height);
+        ctx.lineTo(end.ejeX * canvas.width * 4, end.ejeY * canvas.height);
 
         if(isShortPath(street.startVertex, street.endVertex)){
             ctx.strokeStyle = 'blue'; 
@@ -37,7 +39,7 @@ const drawMap = async () => {
 
         ctx.stroke();
 
-        let mx = ((start.ejeX * canvas.width) + (end.ejeX * canvas.width)) / 2;
+        let mx = ((start.ejeX * canvas.width * 4) + (end.ejeX * canvas.width * 4)) / 2;
         let my = ((start.ejeY * canvas.height) + (end.ejeY * canvas.height)) / 2;
 
         ctx.fillStyle = 'white';
@@ -50,7 +52,7 @@ const drawMap = async () => {
 
     corners.forEach(corner => {
         ctx.beginPath()
-        ctx.arc(corner.ejeX * canvas.width, corner.ejeY * canvas.height, 10, 0, Math.PI * 2)
+        ctx.arc(corner.ejeX * canvas.width * 4, corner.ejeY * canvas.height, 10, 0, Math.PI * 2)
 
         if(parseInt(corner.vertex) == selectedSource){
             ctx.fillStyle = 'green'
@@ -92,7 +94,7 @@ $('#destination-vertex').on('change', (e) => {
     drawMap()
 })
 
-$('#correr-alg').on('click', () => {
+$('#start-alg').on('click', () => {
     dijkstra(adj, source, destination)
 })
 
