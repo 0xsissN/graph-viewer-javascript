@@ -1,27 +1,27 @@
 # graph-viewer-javascript
 
-Este proyecto implementa el algoritmo Dijkstra para encontrar el camino más corto. La aplicación permite visualizar en un mapa interactivo los vértices y las aristas de un grafo, y ejecutando el algoritmo dijkstra se mostraria el camino óptimo entre los nodos seleccionados.
+This project implements Dijkstra's algorithm to find the shortest path. The application allows users to visualize vertices and edges of a graph on an interactive map, and by running Dijkstra’s algorithm, it displays the optimal path between selected nodes.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
-- **HTML5** - Estructura de la página.
-- **CSS3** - Estilización y diseño de la interfaz.
-- **JavaScript (JS)** - Implementación del algoritmo de Dijkstra y manipulación de `<canvas>`.
-- **jQuery** - Para simplificar las operaciones de manipulación del DOM.
-- **Bootstrap** - Estilos y componentes de interfaz de usuario.
-- **JSON** - Almacenamiento y carga de datos del grafo (nodos y aristas).
+- **HTML5** - Page structure.
+- **CSS3** - Styling and interface design.
+- **JavaScript (JS)** - Dijkstra algorithm implementation and `<canvas>` manipulation.
+- **jQuery** - Simplifies DOM manipulation operations.
+- **Bootstrap** - User interface styles and components.
+- **JSON** - Stores and loads graph data (nodes and edges).
 
 <p align="center">
   <img src="https://github.com/0xsissN/project-images/blob/main/short-path.png?raw=true" alt="short path" width="900"/>
 </p>
 
-## Instalación y Configuración
+## Installation and Setup
 
-1. Clona el repositorio:
+1. Clone the repository:
 ```
 git clone https://github.com/tu-usuario/tu-repositorio.git
 ```
-2. Instala el paquete jquery:
+2. Install the jQuery package:
 ```
 npm install
 ```
