@@ -19,7 +19,7 @@ This project implements Dijkstra's algorithm to find the shortest path. The appl
 
 1. Clone the repository:
 ```
-git clone https://github.com/tu-usuario/tu-repositorio.git
+git clone https://github.com/0xsissN/graph-viewer-javascript.git
 ```
 2. Install the jQuery package:
 ```
