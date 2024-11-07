@@ -1,23 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-/* Importa la fuente 'Poppins' de Google Fonts, con pesos 400 (normal) y 600 (semibold). */
 
 body {
     font-family: 'Poppins', sans-serif;
     overflow-x: auto;
     overflow-y: hidden;
 }
-/* Aplica la fuente 'Poppins' a todo el cuerpo de la página. Habilita el desplazamiento horizontal si es necesario (overflow-x: auto) y desactiva el desplazamiento vertical (overflow-y: hidden). */
 
 a {
     text-decoration: none;
 }
-/* Elimina el subrayado predeterminado de los enlaces. */
 
 .wrapper {
     display: flex;
     height: 100vh;
 }
-/* Utiliza Flexbox para organizar los elementos dentro del contenedor con clase "wrapper". El contenedor ocupará toda la altura de la ventana (100vh). */
 
 #sidebar {
     width: 70px;
@@ -29,12 +25,10 @@ a {
     flex-direction: column;
     height: 100%;
 }
-/* Estilo para la barra lateral (#sidebar). Tiene un ancho fijo de 70px, con un fondo azul oscuro (#0e2238). La propiedad 'transition' asegura una animación suave para cualquier cambio en el ancho. Flexbox organiza su contenido en columna y ocupa toda la altura del viewport. */
 
 #sidebar.expand {
     width: 260px;
 }
-/* Define el estado expandido de la barra lateral, donde su ancho aumenta a 260px. */
 
 .toggle-btn {
     background-color: transparent;
@@ -42,31 +36,26 @@ a {
     border: 0;
     padding: 1rem 1.5rem;
 }
-/* El botón de alternancia (toggle) es transparente, sin borde, y tiene un cursor de tipo puntero al pasar el mouse. También se le asigna un padding para mejor apariencia. */
 
 .toggle-btn i {
     font-size: 1.5rem;
     color: #FFF;
 }
-/* El icono dentro del botón de alternancia tiene un tamaño de fuente de 1.5rem y es de color blanco. */
 
 .sidebar-logo {
     margin: auto 0;
 }
-/* La clase "sidebar-logo" está centrada verticalmente en su contenedor. */
 
 .sidebar-logo a {
     color: #FFF;
     font-size: 1.15rem;
     font-weight: 500;
 }
-/* Los enlaces dentro del logo de la barra lateral son de color blanco, con un tamaño de fuente de 1.15rem y peso 600 (semibold). */
 
 #sidebar:not(.expand) .sidebar-logo,
 #sidebar:not(.expand) a.sidebar-link span {
     display: none;
 }
-/* Cuando la barra lateral no está expandida, el logo y los textos de los enlaces se ocultan. */
 
 .main-container {
     position: absolute;
@@ -76,7 +65,6 @@ a {
     height: 100%;
     overflow: auto;
 }
-/* El contenedor principal (main-container) está posicionado absolutamente, ocupando el 30% del ancho desde la izquierda, con un ancho de 200% para el contenido desplazable horizontalmente. Se asegura de que todo el contenido sea desplazable si excede el tamaño del contenedor. */
 
 #map {
     height: 100%;
@@ -86,13 +74,10 @@ a {
     background-repeat: no-repeat;
     cursor: grab;
 }
-/* El canvas del mapa (#map) ocupa toda la altura disponible y usa una imagen de fondo. La imagen está contenida dentro del canvas, sin repetirse, y está alineada al centro izquierda. El cursor se cambia a "grab" (una mano abierta) para indicar que se puede arrastrar el contenido. */
 
 #map:active {
     cursor: grabbing;
 }
-/* Mientras el usuario hace clic en el mapa, el cursor cambia a "grabbing" (una mano cerrada) para indicar que está arrastrando. */
-
 
 
 
