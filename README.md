@@ -1,4 +1,4 @@
-# graph-viewer-javascript
+# Graph Viewer
 
 This project implements Dijkstra's algorithm to find the shortest path. The application allows users to visualize vertices and edges of a graph on an interactive map, and by running Dijkstra’s algorithm, it displays the optimal path between selected nodes.
 
